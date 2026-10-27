@@ -1,0 +1,28 @@
+/* 공통 다듬기 (2026-10): 일본어 조판, 작은 글자, 움직임, 시안 목록 버튼 */
+body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+/* 일본어: 어절 단위 줄바꿈 + 프로포셔널 자간 */
+body.lang-ja{line-break:strict;text-spacing-trim:trim-start}
+body.lang-ja :is(h1,h2,h3,h4,.page-title,.page-title-local,.detail-title,.sec-title,.section-title,.intro-title,.hero-title,.hero-catch,.hero-copy-title,.concept-title,.big-title,.v-title,.tile-name,.cat-name,.work-name,.cta-title,.sub-title,.byobu-name,.info-title){word-break:auto-phrase;text-wrap:balance;font-feature-settings:"palt" 1}
+body.lang-ja :is(p,li,dd,td,th){text-wrap:pretty}
+body.lang-ja :is(.hero-lead,.hero-sub,.intro-text,.intro-body p,.concept-text,.cb-lead,.sec-lead){word-break:auto-phrase}
+body.lang-ja .v-title{font-feature-settings:"vpal" 1}
+
+/* 한국어: 어절 단위 줄바꿈 */
+body.lang-ko{word-break:keep-all;overflow-wrap:break-word}
+body.lang-ko :is(td,th,dd){overflow-wrap:anywhere}
+body.lang-ko :is(h1,h2,h3,h4,.page-title,.detail-title,.sec-title,.intro-title,.hero-title,.hero-copy-title,.concept-title,.big-title,.tile-name){text-wrap:balance}
+
+body.lang-en :is(h1,h2,h3,.page-title,.detail-title,.intro-title,.hero-title,.hero-copy-title,.concept-title,.big-title){text-wrap:balance}
+
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* 스크롤 시 서서히 나타남 (JS가 .rv 를 붙일 때만, 움직임 줄이기 설정이면 끔) */
+@media (prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(28px);transition:opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1)}
+  .rv.in{opacity:1;transform:none}
+}
+
+/* 시안 목록으로 돌아가는 버튼: 작고 조용하게 */
+.proposal-back{right:14px!important;bottom:14px!important;font-size:11px!important;letter-spacing:.08em!important;padding:7px 12px!important;border-radius:999px!important;background:rgba(20,20,22,.62)!important;color:#fff!important;opacity:1!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.proposal-back:hover{background:rgba(20,20,22,.85)!important}

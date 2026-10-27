@@ -100,7 +100,7 @@
       if (!ok) { var first = form.querySelector('.is-error'); scrollToEl(first); return; }
       form.querySelectorAll('[name]').forEach(function (f) {
         var out = confirmP.querySelector('[data-out="' + f.name + '"]');
-        if (out) out.textContent = f.value || '—';
+        if (out) out.textContent = f.value || ({ja:'未入力',en:'Not provided',ko:'미입력'}[document.documentElement.lang] || '-');
       });
       scrollToEl(confirmP); flash(confirmP);
     });

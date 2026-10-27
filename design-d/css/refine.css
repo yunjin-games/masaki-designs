@@ -1,0 +1,30 @@
+/* D 다듬기: MJR 야경 풍 — 남색이 도는 검정 + 샴페인 골드, 젠 올드 명조 */
+:root{--bg:#0a0c18;--soft:#121527;--card:#10132a;--field:#10132a;--line:#23273d;--ink:#ece8de;--mute:#a19c92;--accent:#b9aa82;--on-accent:#0a0c18;
+--hf:"Zen Old Mincho","Cormorant Garamond",serif;--latin:"Cormorant Garamond","Zen Old Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+body.lang-ko{--hf:"Noto Serif KR",serif;--latin:"Cormorant Garamond","Noto Serif KR",serif;--sans:"Pretendard Variable","Pretendard",system-ui,sans-serif}
+body.lang-en{--hf:"Cormorant Garamond",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+body{font-weight:400;letter-spacing:.08em;line-height:2}
+body.lang-ko,body.lang-en{letter-spacing:.01em;line-height:1.85}
+
+/* 첫 화면 */
+.hero-shade{background:linear-gradient(180deg,rgba(8,10,24,.35) 0%,rgba(8,10,24,.25) 45%,rgba(8,10,24,.7) 100%)}
+.hero-name{font-weight:300;letter-spacing:.04em}
+.hero-jp{letter-spacing:.42em;font-size:13px}
+.hero-since{letter-spacing:.7em}
+.hero-scroll{display:none!important}
+.hero-meta{grid-template-columns:1fr 1fr}
+
+/* 구역 번호(01, 02…)는 빼고 제목만 */
+.sec-num{display:none}
+.sec-label{font-weight:300;letter-spacing:.16em}
+.concept-title{font-weight:400;letter-spacing:.16em;line-height:1.9}
+.lang-en .concept-title{letter-spacing:.01em;line-height:1.3}
+.lang-ko .concept-title{letter-spacing:.04em;line-height:1.7}
+.page-title{letter-spacing:.32em}
+.detail-title,.work-name{font-weight:400;letter-spacing:.1em}
+.lang-en :is(.detail-title,.work-name){letter-spacing:.01em}
+
+.cat-item img{transition:transform 1.4s cubic-bezier(.16,1,.3,1),opacity .6s}
+.cat-item a:hover img{transform:scale(1.04)}
+.line-link{letter-spacing:.24em;font-size:12px}
+.btn-gold{letter-spacing:.24em}
